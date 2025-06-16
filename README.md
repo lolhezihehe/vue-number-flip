@@ -14,6 +14,11 @@ npm install vue-number-flip
 
 ## Basic usage
 
+```ts
+// main.ts
+import 'vue-number-flip/style.css'
+```
+
 ```vue
 <template>
   <NumberFlip :value="num" />
@@ -25,10 +30,6 @@ import NumberFlip from 'vue-number-flip'
 
 const num = ref(0)
 </script>
-
-<style>
-@import 'vue-number-flip/style.css';
-</style>
 ```
 
 ## Props
