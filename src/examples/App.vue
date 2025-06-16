@@ -54,7 +54,7 @@
 
 <script setup lang="ts">
 import { shallowRef } from 'vue';
-import NumberFlip from '../dist';
+import NumberFlip from '../number-flip.vue';
 
 const randowNum = shallowRef(0);
 function setRandomNumber() {
