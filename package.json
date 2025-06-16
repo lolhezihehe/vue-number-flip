@@ -28,7 +28,8 @@
     "build:examples": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "vue": "^3.5.13"
