@@ -4,9 +4,8 @@
 			<h4 class="text-xl mb-2">Random number change</h4>
 			<div class="border-b w-full h-px mb-4 border-gray-300"></div>
 			<number-flip :value="randowNum" />
-			<div class="my-8"></div>
 
-			<h4 class="text-xl mb-2">Manually set a number</h4>
+			<h4 class="text-xl mt-8 mb-2">Manually set a number</h4>
 			<div class="border-b w-full h-px mb-4 border-gray-300"></div>
 			<number-flip :value="manuallyNumber" />
 			<div class="mb-2"></div>
@@ -21,9 +20,8 @@
 				class="bg-blue-500 text-white px-4 py-1 rounded-sm hover:bg-blue-600"
 				@click="manuallyNumber = newManuallyNumber"
 			>Set number</button>
-			<div class="my-8"></div>
 
-			<h4 class="text-xl mb-2">Manually set a number with formattig function</h4>
+			<h4 class="text-xl mt-8 mb-2">Manually set a number with formattig function</h4>
 			<div class="border-b w-full h-px mb-4 border-gray-300"></div>
 			<number-flip
 				:value="formatNumber"
@@ -40,13 +38,20 @@
 				class="bg-blue-500 text-white px-4 py-1 rounded-sm hover:bg-blue-600"
 				@click="formatNumber = newFormatNumber"
 			>Set number</button>
-			<div class="my-8"></div>
 
-
-			<h4 class="text-xl mb-2">Gradient number</h4>
+			<h4 class="text-xl mt-8 mb-2">Gradient number</h4>
 			<div class="border-b w-full h-px mb-4 border-gray-300"></div>
 			<div class="gradient">
 				<number-flip :value="randowNum" />
+			</div>
+
+			<h4 class="text-xl mt-8 mb-2">Custom numerical values</h4>
+			<div class="border-b w-full h-px mb-4 border-gray-300"></div>
+			<div class="gradient">
+				<number-flip
+					:value="randowNum"
+					:numbers="['玖', '捌', '柒', '陆', '伍', '肆', '叁', '贰', '壹', '零']"
+				/>
 			</div>
 		</div>
 	</section>
@@ -54,14 +59,14 @@
 
 <script setup lang="ts">
 import { shallowRef } from 'vue';
-import NumberFlip from '../number-flip.vue';
+import NumberFlip from '../index';
 
 const randowNum = shallowRef(0);
 function setRandomNumber() {
 	randowNum.value = Math.floor(Math.random() * 1000000);
 }
 setRandomNumber();
-setInterval(setRandomNumber, 2000);
+setInterval(setRandomNumber, 3000);
 
 const manuallyNumber = shallowRef(0);
 const newManuallyNumber = shallowRef(0);

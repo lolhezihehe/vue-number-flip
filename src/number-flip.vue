@@ -9,15 +9,15 @@
 			:key="index"
 			class="number-flip-digit-container"
 		>
-			<span style="visibility: hidden;">0</span>
+			<span style="visibility: hidden;">{{ numbers[numbers.length - 1] }}</span>
 			<div
 				class="number-flip-digit-value"
 				:style="{ transform: translateY }"
 			>
 				<span
-					v-for="i in 10"
+					v-for="i in numbers"
 					:key="i"
-				>{{ 10 - i }}</span>
+				>{{ i }}</span>
 				<span>{{ decimalSeparator }}</span>
 				<span>{{ thousandSeparator }}</span>
 			</div>
@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue';
+import type { PropType, Ref } from 'vue';
 import { ref, watch } from 'vue';
 
 defineOptions({
@@ -49,6 +49,11 @@ const props = defineProps({
 	formatter: {
 		type: Function,
 		default: (num: number) => num.toString()
+	},
+	numbers: {
+		type: Array as PropType<string[] | number[]>,
+		default: () => [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+		validator: (n: string[] | number[]) => n.length === 10
 	}
 })
 
