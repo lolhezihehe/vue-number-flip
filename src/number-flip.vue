@@ -36,7 +36,7 @@ defineOptions({
 const props = defineProps({
 	value: {
 		type: Number,
-		default: 0,
+		required: true
 	},
 	decimalSeparator: {
 		type: String,
@@ -49,10 +49,6 @@ const props = defineProps({
 	formatter: {
 		type: Function,
 		default: (num: number) => num.toString()
-	},
-	immediate: {
-		type: Boolean,
-		default: true
 	}
 })
 
@@ -75,7 +71,7 @@ function calcTranslateY(num: number): string {
 	return (-10 * heightOfSpan + (num + 1) * heightOfSpan).toString()
 }
 
-function generateNumber(value: number) {
+function setNumber(value: number) {
 	const digits = getDigits(value)
 	for (let i = translates.value.length; i < digits.length; i++) {
 		translates.value.push('translateY(-100%)')
@@ -91,9 +87,9 @@ function generateNumber(value: number) {
 watch(
 	() => props.value,
 	(val) => {
-		generateNumber(val)
+		setNumber(val)
 	},
-	{ immediate: props.immediate }
+	{ immediate: true }
 )
 
 </script>

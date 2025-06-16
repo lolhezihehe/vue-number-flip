@@ -82,7 +82,8 @@ function addCommas(x: number): string {
 	font-weight: bold;
 }
 
-.gradient .number-flip-digit-value span {
+.gradient .number-flip-digit-value span,
+.gradient .number-flip-negative {
 	color: #fff;
 	background: linear-gradient(0deg, #00b96b, #1677ff);
 	background-clip: text;
