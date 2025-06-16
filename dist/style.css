@@ -1,0 +1,1 @@
+.number-flip{display:inline-flex}.number-flip-digit-container{display:flex;position:relative;overflow:hidden}.number-flip-digit-value{position:absolute;display:flex;flex-direction:column;transition:transform 1s cubic-bezier(.4,0,.2,1)}
