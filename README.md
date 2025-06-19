@@ -12,12 +12,15 @@ A lightweight Vue 3 component for smooth, flip-style animated number transitions
 npm install vue-number-flip
 ```
 
-## Basic usage
+## Usage
+
+import css in `main.ts`
 
 ```ts
-// main.ts
 import 'vue-number-flip/style.css'
 ```
+
+basic useage
 
 ```vue
 <template>
@@ -40,7 +43,7 @@ const num = ref(0)
 | decimalSeparator  | The decimal separator which should be used when decimal numbers are being displayed.   | `string`               | `.`                               |
 | thousandSeparator | The thousand separator which should be used when thousand numbers are being displayed. | `string`               | `,`                               |
 | formatter         | A function which can be used to format the number before it is being displayed.        | `function`             | `(num: number) => num.toString()` |
-| numbers           | Custom numerical values                                                                | `string[] \| number[]` | `[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]`  |
+| numbers           | Custom numbers text                                                                    | `string[] \| number[]` | `[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]`  |
 
 ## License
 
