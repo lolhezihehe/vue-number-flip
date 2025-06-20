@@ -39,11 +39,11 @@ const num = ref(0)
 
 | Name              | Description                                                                            | Type                   | Default                           |
 | ----------------- | -------------------------------------------------------------------------------------- | ---------------------- | --------------------------------- |
-| value `required`  | The number                                                                             | `number`               | -                                 |
+| value `required`  | The number to be fliped                                                                | `number`               | -                                 |
 | decimalSeparator  | The decimal separator which should be used when decimal numbers are being displayed.   | `string`               | `.`                               |
 | thousandSeparator | The thousand separator which should be used when thousand numbers are being displayed. | `string`               | `,`                               |
 | formatter         | A function which can be used to format the number before it is being displayed.        | `function`             | `(num: number) => num.toString()` |
-| numbers           | Custom numbers text                                                                    | `string[] \| number[]` | `[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]`  |
+| numbers           | The text of numbers to be displayed                                                    | `string[] \| number[]` | `[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]`  |
 
 ## License
 
